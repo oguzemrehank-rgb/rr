@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KODE - Forum">
+    <title>KODE - Forum</title>
+    <link rel="alternate" type="application/rss+xml" href="rss.html" title="KODE Forum RSS">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Tema flash'ını önlemek için hemen yükle
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KODE</div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" class="theme-btn">🌙</button>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="kode-nedir.html">KODE Nedir</a></li>
+                    <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="forum.html" class="active">Forum</a></li>
+                    <li><a href="sss.html">SSS</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+                <div class="user-menu" id="user-menu">
+                    <button id="login-btn">Giriş Yap</button>
+                    <button id="register-btn">Kaydol</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Forum Section -->
+    <section>
+        <div class="container">
+            <div class="forum-layout">
+                <!-- Sol Panel -->
+                <aside class="forum-sidebar">
+                    <div class="sidebar-section">
+                        <h4>Konu İşlemleri</h4>
+                        <button id="new-topic-btn" class="cta-button">Yeni Konu Aç</button>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>Topluluklar</h4>
+                        <ul id="communities-list">
+                            <li><a href="#" data-community="genel">Genel</a></li>
+                            <li><a href="#" data-community="kodlama">Kodlama</a></li>
+                            <li><a href="#" data-community="elektronik">Elektronik</a></li>
+                            <li><a href="#" data-community="proje">Proje Paylaşımları</a></li>
+                        </ul>
+                        <button id="create-community-btn" class="cta-button cta-button-secondary">Topluluk Oluştur</button>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>Trendler</h4>
+                        <ul id="trends-list">
+                            <li><a href="#">#KODE</a></li>
+                            <li><a href="#">#Arduino</a></li>
+                            <li><a href="#">#Python</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>Yasal</h4>
+                        <ul>
+                            <li><a href="#" id="privacy-policy-link">Gizlilik Politikası</a></li>
+                            <li><a href="#" id="terms-link">Kullanıcı Sözleşmesi</a></li>
+                            <li><a href="#" id="forum-rules-link">Forum Kuralları</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidebar-section">
+                        <h4>Ayarlar</h4>
+                        <button id="theme-toggle-btn" class="theme-btn">🌙 Tema Değiştir</button>
+                        <br>
+                        <button id="dm-btn" class="cta-button cta-button-secondary">Özel Mesajlar</button>
+                        <br>
+                        <a href="hesabim.html" class="cta-button cta-button-secondary">Hesabım</a>
+                    </div>
+                </aside>
+                <!-- Ana İçerik -->
+                <main class="forum-content">
+                    <div class="section-title">
+                        <h2>Forum</h2>
+                        <p>Kullanıcılar arası tartışmalar, sorular ve deneyimler</p>
+                    </div>
+                    <div class="forum-search">
+                        <input type="text" id="topic-search" placeholder="Konu ara...">
+                    </div>
+                    <div id="forum-content">
+                        <div id="topics-list">
+                            <!-- Konular buraya yüklenecek -->
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Topic Modal -->
+    <div id="new-topic-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; border-radius: 8px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;">
+            <h3>Yeni Konu Aç</h3>
+            <form id="new-topic-form">
+                <div class="form-group">
+                    <label for="topic-title">Başlık:</label>
+                    <input type="text" id="topic-title" required>
+                </div>
+                <div class="form-group">
+                    <label for="topic-category">Kategori:</label>
+                    <select id="topic-category">
+                        <option value="genel">Genel</option>
+                        <option value="kodlama">Kodlama</option>
+                        <option value="elektronik">Elektronik</option>
+                        <option value="proje">Proje Paylaşımları</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="topic-content">İçerik:</label>
+                    <textarea id="topic-content" rows="5" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="topic-image">Görsel (İsteğe bağlı):</label>
+                    <input type="file" id="topic-image" accept="image/*">
+                </div>
+                <button type="submit" class="cta-button">Gönder</button>
+                <button type="button" id="cancel-topic-btn" class="cta-button cta-button-secondary">İptal</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Privacy Policy Modal -->
+    <div id="privacy-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--bg-light); color: var(--text-dark); padding: 2rem; border-radius: 8px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;">
+            <h3>Gizlilik Politikası</h3>
+            <p>KODE olarak, kullanıcılarımızın gizliliğini korumak bizim için önemlidir. Bu gizlilik politikası, web sitemizi kullandığınızda toplanan bilgiler ve bunların nasıl kullanıldığı hakkında bilgi verir.</p>
+            <p><strong>Toplanan Bilgiler:</strong> Kullanıcı adı, e-posta, telefon numarası ve şifre gibi kayıt bilgileri.</p>
+            <p><strong>Kullanım:</strong> Hesap yönetimi ve iletişim için kullanılır.</p>
+            <p><strong>Güvenlik:</strong> Bilgileriniz güvenli bir şekilde saklanır ve üçüncü taraflarla paylaşılmaz.</p>
+            <button id="close-privacy-modal" class="cta-button">Kapat</button>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="terms-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--bg-light); color: var(--text-dark); padding: 2rem; border-radius: 8px; max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto;">
+            <h3>Kullanıcı Sözleşmesi</h3>
+            <p>KODE web sitesini kullanarak bu sözleşmeyi kabul etmiş sayılırsınız.</p>
+            <p><strong>Hizmet:</strong> Eğitim ve topluluk platformu sağlarız.</p>
+            <p><strong>Sorumluluk:</strong> İçeriklerinizden siz sorumlusunuz.</p>
+            <p><strong>İhlal:</strong> Kurallara uymayan hesaplar yasaklanır.</p>
+            <button id="close-terms-modal" class="cta-button">Kapat</button>
+        </div>
+    </div>
+
+    <!-- DM Modal -->
+    <div id="dm-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--bg-light); color: var(--text-dark); padding: 2rem; border-radius: 8px; max-width: 500px; width: 90%; max-height: 80vh; overflow-y: auto;">
+            <h3>Özel Mesajlar</h3>
+            <div id="dm-list"></div>
+            <div id="dm-form" style="margin-top: 1rem;">
+                <input type="text" id="dm-recipient" placeholder="Alıcı kullanıcı adı" required>
+                <textarea id="dm-content" placeholder="Mesajınız..." rows="3" required></textarea>
+                <button id="send-dm-btn" class="cta-button">Gönder</button>
+            </div>
+            <button id="close-dm-modal" class="cta-button">Kapat</button>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/forum.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+</body>
+</html>

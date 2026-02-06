@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KODE - Eğitim, teknoloji ve yaratıcılığı bir araya getiren inisiyatif">
+    <title>KODE - Anasayfa</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        // Tema flash'ını önlemek için hemen yükle
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KODE</div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" class="theme-btn">🌙</button>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Anasayfa</a></li>
+                    <li><a href="kode-nedir.html">KODE Nedir</a></li>
+                    <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="sss.html">SSS</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                </ul>
+                <div class="user-menu" id="user-menu">
+                    <button id="login-btn">Giriş Yap</button>
+                    <button id="register-btn">Kaydol</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Eğitim, Teknoloji ve Yaratıcılık</h1>
+            <p>Geleceğin liderlerini yetiştiren bir eğitim inisiyatifi</p>
+            <a href="iletisim.html" class="cta-button">Bize Ulaşın</a>
+        </div>
+    </section>
+
+    <!-- KODE Nedir Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>KODE Nedir?</h2>
+            </div>
+            <div class="grid grid-2">
+                <div>
+                    <h3>Misyonumuz</h3>
+                    <p>KODE, genç nesillere teknoloji ve dijital becerileri öğretmeyi hedefleyen, kurumsal ve sosyal açıdan sorumlu bir eğitim inisiyatifidir. Öğrencilerin yaratıcılıklarını geliştirmesi ve gelecek için gerekli becerilerle donanması bizim temel amacımızdır.</p>
+                </div>
+                <div>
+                    <h3>Vizyonumuz</h3>
+                    <p>Her öğrencinin teknolojiye erişim hakkı olduğu bir gelecek inşa etmek. Okullar, aileler ve eğitimcilerle işbirliği yaparak, eleştirel düşünme ve problem çözme becerilerini geliştirmeyi amaçlıyoruz.</p>
+                </div>
+            </div>
+            <div class="grid grid-3" style="margin-top: 2rem;">
+                <div class="card">
+                    <h3>Eğitim Odaklı</h3>
+                    <p>Nitelikli, pedagojik temelli programlar sunuyoruz.</p>
+                </div>
+                <div class="card">
+                    <h3>Katılımcı</h3>
+                    <p>Herkesin erişebileceği, entegratif bir yapı hedefliyoruz.</p>
+                </div>
+                <div class="card">
+                    <h3>İnovatif</h3>
+                    <p>Güncel teknoloji ve yaratıcı yöntemlerle eğitim veririz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Haberler & Duyurular -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Haberler & Duyurular</h2>
+            </div>
+            <div class="grid grid-3">
+                <!-- Haber 1 -->
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=300&fit=crop" alt="KODE Platformu" class="news-image">
+                    <div class="news-content">
+                        <p class="news-date">18 Aralık 2025</p>
+                        <h3 class="news-title">KODE Eğitim Platformu Resmen Duyuruldu</h3>
+                        <p class="news-excerpt">KODE, öğrencilerin kodlama, elektronik ve mühendislik alanlarında öğrenerek üretmesini hedefleyen bir eğitim teknolojisi girişimi olarak çalışmalarına resmen başladı.</p>
+                        <a href="kode-nedir.html" class="news-link">Detaylı Bilgi →</a>
+                    </div>
+                </article>
+
+                <!-- Haber 2 -->
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&h=300&fit=crop" alt="KODEO.1" class="news-image">
+                    <div class="news-content">
+                        <p class="news-date">20 Aralık 2025</p>
+                        <h3 class="news-title">İlk Eğitim Modülü: KODEO.1</h3>
+                        <p class="news-excerpt">KODE'nin ilk geliştirdiği eğitim kartı KODEO.1, öğrencilerin mikrodenetleyici temellerini ve sensör kullanımını deneyerek öğrenmesini amaçlıyor.</p>
+                        <a href="iletisim.html" class="news-link">Daha Fazla →</a>
+                    </div>
+                </article>
+
+                <!-- Haber 3 -->
+                <article class="news-card">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop" alt="Üretim Odaklı Öğrenme" class="news-image">
+                    <div class="news-content">
+                        <p class="news-date">22 Aralık 2025</p>
+                        <h3 class="news-title">Gençler İçin Üretim Odaklı Öğrenme</h3>
+                        <p class="news-excerpt">KODE, gençlerin "sadece tüketen değil, üreten" bireyler olmasını hedefliyor. Proje kapsamında atölye çalışmaları ve uygulamalı eğitim içerikleri geliştiriliyor.</p>
+                        <a href="galeri.html" class="news-link">Galeriyi Gör →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section style="background: linear-gradient(135deg, var(--primary-dark) 0%, var(--bg-light) 100%); text-align: center;">
+        <div class="container">
+            <h2>Başlamaya Hazır mısınız?</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">Sorularınız mı var? İletişim sayfamızdan bize ulaşabilirsiniz.</p>
+            <a href="iletisim.html" class="cta-button">İletişim Formu</a>
+            <a href="sss.html" class="cta-button cta-button-secondary" style="margin-left: 1rem;">Sıkça Sorulan Sorular</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>KODE Hakkında</h4>
+                    <p>Eğitim, teknoloji ve yaratıcılığı bir araya getiren profesyonel bir inisiyatif.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <a href="kode-nedir.html">KODE Nedir</a><br>
+                    <a href="ekibimiz.html">Ekibimiz</a><br>
+                    <a href="galeri.html">Galeri</a><br>
+                    <a href="sss.html">SSS</a>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: <a href="mailto:info@kode.edu.tr">info@kode.edu.tr</a></p>
+                    <p>Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KODE. Tüm hakları saklıdır. | <a href="gizlilik.html" style="color: #999999;">Gizlilik</a> | <a href="kullanim-sartlari.html" style="color: #999999;">Kullanım Şartları</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js')
+                .then(registration => console.log('SW registered'))
+                .catch(error => console.log('SW registration failed'));
+        }
+    </script>
+</body>
+</html>

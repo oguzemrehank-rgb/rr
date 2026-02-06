@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KODE - İletişim Bilgileri ve Formu">
+    <title>İletişim | KODE</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">KODE</div>
+                <div class="theme-toggle">
+                    <button id="theme-toggle-btn" class="theme-btn">🌙</button>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="kode-nedir.html">KODE Nedir</a></li>
+                    <li><a href="ekibimiz.html">Ekibimiz</a></li>
+                    <li><a href="galeri.html">Galeri</a></li>
+                    <li><a href="forum.html">Forum</a></li>
+                    <li><a href="sss.html">SSS</a></li>
+                    <li><a href="iletisim.html" class="active">İletişim</a></li>
+                </ul>
+                <div class="user-menu" id="user-menu">
+                    <button id="login-btn">Giriş Yap</button>
+                    <button id="register-btn">Kaydol</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>İletişim</h1>
+            <p>Bize ulaşmak istiyorsanız, biz buradayız</p>
+        </div>
+    </section>
+
+    <!-- Contact Information & Form -->
+    <section>
+        <div class="container">
+            <div class="grid grid-2">
+                <!-- Contact Information -->
+                <div>
+                    <h2>Bize Ulaşın</h2>
+                    <p style="margin-bottom: 2rem;">Sorularınız, önerileriniz veya işbirliği teklifleriniz için bize ulaşmaktan çekinmeyin. Saatler içerisinde yanıt vermek için elimizden gelenin en iyisini yapacağız.</p>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 0.5rem;">📧 E-Mail</h3>
+                        <p>
+                            <strong>İletişim:</strong> <a href="mailto:Kodegroupofficial@gmail.com">Kodegroupofficial@gmail.com</a>
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 2rem;">
+                        <h3 style="margin-bottom: 0.5rem;">📱 Sosyal Medya</h3>
+                        <p>
+                            <strong>Instagram:</strong> <a href="https://instagram.com/kodegroup_official" target="_blank">@kodegroup_official</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 style="margin-bottom: 1rem;">Yanıt Süresi</h3>
+                        <p><small>Hafta içi mesajlarınız 24 saat içinde, hafta sonları 48 saat içinde yanıtlandırılır.</small></p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div>
+                    <h2>İletişim Formu</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Ad Soyadı *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-Mail Adresi *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon Numarası</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Konu *</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mesajınız *</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+
+                        <button type="submit" class="cta-button" style="width: 100%;">Gönder</button>
+
+                        <div class="form-disclaimer">
+                            <strong>Gizlilik Uyarısı:</strong> Bu form, web sunucusunda veri saklamaz. Mesajınız doğrudan e-mail olarak alınacaktır. Lütfen URL'yi kopyalayın ve yer işareti olarak kaydedin.<br><br>
+                            Kişisel verileriniz GDPR ve Türk Veri Koruma Mevzuatı kapsamında korunmaktadır.
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Quick Link -->
+    <section style="background-color: var(--bg-light); text-align: center;">
+        <div class="container">
+            <h2>Sıkça Sorulan Sorular</h2>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; color: var(--text-light);">Cevapladığımız tüm soruları, SSS sayfamızda bulabilirsiniz.</p>
+            <a href="sss.html" class="cta-button">SSS Sayfasına Git</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>KODE Hakkında</h4>
+                    <p>Eğitim, teknoloji ve yaratıcılığı bir araya getiren profesyonel bir inisiyatif.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Hızlı Bağlantılar</h4>
+                    <a href="kode-nedir.html">KODE Nedir</a><br>
+                    <a href="ekibimiz.html">Ekibimiz</a><br>
+                    <a href="galeri.html">Galeri</a><br>
+                    <a href="sss.html">SSS</a>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <p>Email: <a href="mailto:info@kode.edu.tr">info@kode.edu.tr</a></p>
+                    <p>Türkiye</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 KODE. Tüm hakları saklıdır. | <a href="gizlilik.html" style="color: #999999;">Gizlilik</a> | <a href="kullanim-sartlari.html" style="color: #999999;">Kullanım Şartları</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

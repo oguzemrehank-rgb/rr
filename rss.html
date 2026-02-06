@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RSS Feed | KODE</title>
+</head>
+<body>
+    <h1>KODE Forum RSS Feed</h1>
+    <div id="rss-content"></div>
+    <script>
+        function generateRSS() {
+            const topics = JSON.parse(localStorage.getItem('topics')) || [];
+            let rss = `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+<title>KODE Forum</title>
+<description>KODE Eğitim Platformu Forum Konuları</description>
+<link>https://kode.edu.tr/forum.html</link>
+<lastBuildDate>${new Date().toUTCString()}</lastBuildDate>
+`;
+            topics.forEach(topic => {
+                rss += `
+<item>
+<title>${topic.title}</title>
+<description>${topic.content}</description>
+<link>https://kode.edu.tr/forum.html#topic-${topic.id}</link>
+<author>${topic.author}</author>
+<pubDate>${new Date(topic.date).toUTCString()}</pubDate>
+</item>`;
+            });
+            rss += `
+</channel>
+</rss>`;
+            document.getElementById('rss-content').innerHTML = `<pre>${rss}</pre>`;
+        }
+        generateRSS();
+    </script>
+</body>
+</html>
